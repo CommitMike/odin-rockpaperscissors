@@ -13,7 +13,6 @@ function getComputerChoice() {
     }
 }
 
-
 function getHumanChoice() {
     const sign = prompt("Enter rock, paper or scissors (in lower case)");
     const choice = sign.toLowerCase();
@@ -21,23 +20,35 @@ function getHumanChoice() {
      if (choice === "rock" || choice === "paper" || choice === "scissors") {
         return choice;
     } else {
-        console.log("Incorrect value input.");
         return null; 
     }
 }
 
-console.log(getHumanChoice())
-console.log(getComputerChoice())
-
-
-
 // Play a round function
 function playRound(humanChoice, computerChoice) {
-  // Step 1: Check if input is valid
-  if (!humanChoice) {
-    console.log("Invalid human choice.");
-    return;
-  }
+    // Step 1: Check if input is valid
+    if (!humanChoice) {
+        console.log("Invalid human choice.");
+        return;
+    }
+
+    // Step 2: Compare choices
+    if (humanChoice === computerChoice) {
+        console.log("Its a draw")
+    } else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        // Human wins
+        humanScore++;
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+    } else {
+        // Computer wins
+        computerScore++;
+        console.log(`You loose! ${computerChoice} beats ${humanChoice}`);
+    }
+
 }
 
 const humanSelection = getHumanChoice();
