@@ -5,15 +5,13 @@ function getComputerChoice() {
     const randomNum = Math.random();
 
     if (randomNum < 0.33) {
-        return "Computer choice: rock";
+        return "rock";
     } else if (randomNum < 0.66) {
-        return "Computer choice: paper";
+        return "paper";
     } else {
-        return "Computer choice: scissors"
+        return "scissors"
     }
 }
-
-
 
 
 function getHumanChoice() {
@@ -21,7 +19,7 @@ function getHumanChoice() {
     const choice = sign.toLowerCase();
 
      if (choice === "rock" || choice === "paper" || choice === "scissors") {
-        return "Your choice: " + choice;
+        return choice;
     } else {
         console.log("Incorrect value input.");
         return null; 
@@ -30,3 +28,19 @@ function getHumanChoice() {
 
 console.log(getHumanChoice())
 console.log(getComputerChoice())
+
+
+
+// Play a round function
+function playRound(humanChoice, computerChoice) {
+  // Step 1: Check if input is valid
+  if (!humanChoice) {
+    console.log("Invalid human choice.");
+    return;
+  }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
