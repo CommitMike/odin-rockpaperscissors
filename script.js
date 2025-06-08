@@ -1,9 +1,13 @@
+// Setting human and computer scores to 0
 let humanScore = 0;
 let computerScore = 0;
 
+// Getting computer choice function
 function getComputerChoice() {    
+    // Math.random gives us a random number to use in the if statement below
     const randomNum = Math.random();
 
+    // setting up what each value represents i.e. if random number is less than 0.33, then it is rock etc.
     if (randomNum < 0.33) {
         return "rock";
     } else if (randomNum < 0.66) {
@@ -13,10 +17,13 @@ function getComputerChoice() {
     }
 }
 
+// Getting human choice function
 function getHumanChoice() {
+    // Prompt displayed for user to enter rock, paper or scissors
     const sign = prompt("Enter rock, paper or scissors (in lower case)");
+    // the choice is changed to lower case for no case sensitivity 
     const choice = sign.toLowerCase();
-
+    // Displaying human choices
      if (choice === "rock" || choice === "paper" || choice === "scissors") {
         return choice;
     } else {
