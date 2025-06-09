@@ -1,5 +1,3 @@
-
-
 // Allowing game to restart
 function startGame() {
     // Setting human and computer scores to 0
@@ -45,7 +43,7 @@ function startGame() {
 
         // Step 2: Compare choices
         if (humanChoice === computerChoice) {
-            console.log("Its a draw")
+            console.log("It's a draw")
         } else if (
             (humanChoice === "rock" && computerChoice === "scissors") ||
             (humanChoice === "paper" && computerChoice === "rock") ||
@@ -57,14 +55,14 @@ function startGame() {
         } else {
             // Computer wins
             computerScore++;
-            console.log(`You loose! ${computerChoice} beats ${humanChoice}`);
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
         }
         // Step 3: Scores update
         console.log(`Score - You: ${humanScore}, Computer: ${computerScore}`);
     }
 
     // For loop - allows the game to have multiple rounds
-    //  // For each round, add a round and display that in the console.
+    //// For each round, add a round and display that in the console.
     for (let round = 1; round <= 5; round++) {
         console.log(`--- Round ${round} ---`);
         
@@ -74,7 +72,7 @@ function startGame() {
         playRound(humanSelection, computerSelection);
     }
 
-    // Display when gavme is over and the final scores 
+    // Display when game is over and the final scores 
     console.log("--- Game Over ---");
     console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
 
@@ -88,5 +86,14 @@ function startGame() {
     }
 }
 
-startGame();
-// playRound(humanSelection, computerSelection);
+
+while (true) {
+    startGame(); // Play one full game (5 rounds)
+
+    const playAgain = prompt("Do you want to play again? (yes or no)").toLowerCase();
+
+    if (playAgain !== "yes") {
+        console.log("Thanks for playing! Goodbye.");
+        break;
+    }
+}
