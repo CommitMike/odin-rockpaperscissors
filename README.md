@@ -1,7 +1,5 @@
 # odin-rockpaperscissors
 
-Absolutely — here’s a full breakdown of the logic and structure of your **Rock Paper Scissors game** so you can re-write it confidently from scratch without needing my help again.
-
 ---
 
 ## 🧠 Full Game Logic Explained (Step by Step)
