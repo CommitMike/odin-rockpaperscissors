@@ -1,4 +1,4 @@
-// Allowing game to restart
+    // Allowing game to restart
 function startGame() {
     // Setting human and computer scores to 0
     let humanScore = 0;
